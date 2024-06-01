@@ -1,0 +1,8 @@
+.gauge-container {
+    position: relative;
+}
+
+#gaugeValue {
+    margin-top: 20px;
+    width: 100px;
+}
