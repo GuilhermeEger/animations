@@ -1,16 +1,24 @@
-import AnimationRender from "../../atoms/animationRender/AnimationRender";
-import CarSpeding from "../../organisms/carSpeeding/CarSpedding";
+import AnimationRender from "../../atoms/AnimationRender/AnimationRender";
+import CarSpeding from "../../organisms/CarSpeeding/CarSpedding.js";
+import TypeAnimation from "../../atoms/TypeAnimation/TypeAnimations";
+import "./Home.css";
+import getGreetings from "../../../utils/HelperFunctions.js";
+import { useEffect } from "react";
 
 function Home() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <div style={{width:'200px', height:'200px'}}>
-          {false ? <AnimationRender name="hello" /> : null}
-          {false ? <AnimationRender name="welcome" /> : null}
+      <div style={{marginTop:"20px"}}>
+        <TypeAnimation phrases={[getGreetings(), "This is a simple project to practice some skills.","Take a look on code on github!"]} />
+      </div>
+        <div>
+          <div>
+            <AnimationRender name="hello" />
+            <AnimationRender name="welcome" />
+          </div>
           <CarSpeding />
         </div>
-      </header>
     </div>
   );
 }

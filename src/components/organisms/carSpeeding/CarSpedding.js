@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useRef} from "react";
-import Speedometer from "../../molecules/speedometer/Speedometer"
-import AnimationContent from "../../molecules/animationContent/AnimationContent";
+import Speedometer from "../../molecules/Speedometer/Speedometer"
+import AnimationContent from "../../molecules/AnimationContent/AnimationContent";
 
 function CarSpeding(){
 
@@ -51,14 +51,14 @@ function CarSpeding(){
                     }
                     return prevSpeed - 1;
                   } else if (directionOfChangeSpeed === "increasing") {
-                    if (prevSpeed >= 99) {
+                    if (prevSpeed >= 100) {
                       clearInterval(intervalID);
                       setIsSpeeding(false);
                       return prevSpeed;
                     }
                     return prevSpeed + 1;
                   } else if (directionOfChangeSpeed === "decreasing") {
-                    if (prevSpeed <= 1) {
+                    if (prevSpeed <= 0) {
                       clearInterval(intervalID);
                       setIsSpeeding(false);
                       return prevSpeed;
@@ -86,11 +86,11 @@ function CarSpeding(){
     }
 
     return(
-    <div>
-        <div>
-            <AnimationContent animationStyle={{width:'400px'}} speedTrigged={(directionOfChangeSpeed) => speedHandle(directionOfChangeSpeed)} speedValue={carSmoothSpeed(speed)} changeSpeed={true} name="car" />
-            <Speedometer width={'400px'} speedValue={speed} />
-        </div>
+    <div style={{width:"400px", margin:'auto'}}>
+
+      <AnimationContent animationStyle={{width:'400px'}} speedTrigged={(directionOfChangeSpeed) => speedHandle(directionOfChangeSpeed)} speedValue={carSmoothSpeed(speed)} changeSpeed={true} name="car" />
+      <Speedometer width={'400px'} speedValue={speed} />
+
     </div>
     )
 

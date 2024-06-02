@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import MuiButton from "../../atoms/muiComponentes/button/Button";
-import AnimationRender from "../../atoms/animationRender/AnimationRender";
+import AnimationRender from "../../atoms/AnimationRender/AnimationRender";
 
 function AnimationContent({ name, changeSpeed, speedTrigged, speedValue = 1, animationStyle }) {
 
